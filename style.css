@@ -1,0 +1,285 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.attack_titan{
+    width: 40%;
+}
+.menu {
+    text-align: center;
+    height: 70px;
+    background-color: #f7d1e3; /* light pink pastel */
+    padding-top: 15px;
+}
+
+.menu .menu_item {
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+.menu .menu_item .global {
+    text-decoration: none;
+    color: #6a1b9a; /* purple color */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.menu .menu_item .global:hover {
+    font-size: 32px;
+    color: #ab47bc;
+    transition: 0.3s ease;
+}
+
+.main {
+    height: 600px;
+    padding-top: 80px;
+    text-align: center;
+    background: url("img/anime_background.jpg") center center/cover no-repeat;
+    color: #d81b60; /* bright pink */
+}
+
+.main_title {
+    font-size: 90px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 2px 2px #5d1049;
+    margin-bottom: 15px;
+}
+
+.main_subtitle {
+    font-size: 40px;
+    font-style: italic;
+    color: #520e47;
+    margin-bottom: 30px;
+}
+
+.main_button {
+    height: 60px;
+    width: 180px;
+    font-size: 24px;
+    background-color: #f48fb1; /* pastel pink */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(244, 143, 177, 0.6);
+}
+
+.main_button:hover {
+    background-color: #ce93d8; /* pastel purple */
+    box-shadow: 0 6px 8px rgba(206, 147, 216, 0.8);
+    transition: 0.3s ease;
+}
+
+.about {
+    padding: 50px 40px;
+    background-color: #fce4ec; /* very light pink */
+    overflow: hidden;
+}
+
+.about_title {
+    font-size: 38px;
+    color: #ad1457;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about_img {
+    width: 30%;
+    float: right;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(171, 20, 87, 0.3);
+    margin-left: 20px;
+}
+
+.about_text {
+    font-size: 22px;
+    color: #880e4f;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.products {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f3e5f5; /* soft lavender */
+}
+
+.products_title {
+    font-size: 36px;
+    color: #6a1b9a;
+    margin-bottom: 50px;
+}
+
+.products_card {
+    display: inline-block;
+    width: 290px;
+    margin: 0 20px 40px 20px;
+    vertical-align: top;
+    border: 2px solid #ce93d8;
+    border-radius: 20px;
+    background-color: #faf4fc;
+    box-shadow: 2px 2px 8px rgba(106, 27, 154, 0.3);
+    padding-bottom: 15px;
+}
+
+/* Ensure all product images are uniform in size and aspect ratio */
+.products_img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Keeps images proportional, prevents stretching */
+}
+
+
+.products_card h3 {
+    color: #6a1b9a;
+    margin: 15px 0 8px 0;
+}
+
+.products_card p {
+    font-size: 16px;
+    color: #4a148c;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+.products_button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #ce93d8;
+    color: #4a148c;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.products_button:hover {
+    background-color: #6a1b9a;
+    color: white;
+}
+
+.team {
+    background-color: #fce4ec;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 36px;
+    color: #ad1457;
+    margin-bottom: 50px;
+}
+
+.team_member {
+    display: inline-block;
+    width: 250px;
+    margin: 0 15px 40px 15px;
+    border: 2px solid #ad1457;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #fff0f6;
+    box-shadow: 0 3px 6px rgba(173, 20, 87, 0.3);
+    vertical-align: top;
+}
+
+.team_member img {
+    width: 90%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team_member_name {
+    font-size: 26px;
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+.team_member_description {
+    font-size: 18px;
+    color: #880e4f;
+    margin-bottom: 15px;
+}
+
+.team_member_email {
+    display: block;
+    background-color: #ad1457;
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+    font-size: 16px;
+    padding: 8px 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.team_member_email:hover {
+    background-color: #6a1b9a;
+    transition: 0.3s ease;
+}
+
+.contacts {
+    padding: 50px 40px;
+    background-color: #f3e5f5;
+    color: #6a1b9a;
+    font-size: 20px;
+}
+
+.contacts h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.contacts_text_location,
+.contacts_text_phone,
+.contacts_text_email {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.contacts_text_phone_link,
+.contacts_text_email_link {
+    text-decoration: none;
+    color: #ab47bc;
+    font-weight: bold;
+}
+
+.contacts_text_phone_link:hover,
+.contacts_text_email_link:hover {
+    color: #6a1b9a;
+    transition: 0.3s ease;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .about_img {
+        width: 80%;
+        float: none;
+        display: block;
+        margin: 15px auto;
+    }
+    .products_card {
+        width: 80%;
+        margin: 20px auto;
+    }
+    .team_member {
+        width: 80%;
+        margin: 20px auto;
+    }
+    .main_title {
+        font-size: 50px;
+    }
+    .main_subtitle {
+        font-size: 24px;
+    }
+}
