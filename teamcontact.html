@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Otaku Anime Shop | Products & Contact</title>
+    <title>Otaku Anime Shop - Team & Contact</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,35 +15,38 @@
         </ul>
     </nav>
 
-    <section class="products" id="products">
-        <h2 class="products_title">Featured Products</h2>
-
-        <div class="products_card">
-            <img src="img/figure1.jpg" alt="Anime Figure 1" class="products_img" />
-            <h3>Naruto Uzumaki Figure</h3>
-            <p>Highly detailed action figure from the Naruto series.</p>
-            <button class="products_button">Add to Cart</button>
+    <section class="team" id="team">
+        <h2>Meet Our Team</h2>
+        
+        <div class="team_member">
+            <img src="img/staff1.jpg" alt="CEO" />
+            <h3 class="team_member_name">Akira Tanaka</h3>
+            <p class="team_member_description">Founder & CEO - Anime lover and collector.</p>
+            <a href="mailto:akira@otakuanime.com" class="team_member_email">akira@otakuanime.com</a>
         </div>
 
-        <div class="products_card">
-            <img src="img/figure2.jpg" alt="Anime Figure 2" class="products_img" />
-            <h3>Sailor Moon Wand</h3>
-            <p>Replica of Sailor Moon's iconic moon wand.</p>
-            <button class="products_button">Add to Cart</button>
+        <div class="team_member">
+            <img src="img/staff2.jpg" alt="Product Manager" />
+            <h3 class="team_member_name">Eichirii Oda</h3>
+            <p class="team_member_description">Product Manager - Expert in anime merchandise.</p>
+            <a href="mailto:miyu@otakuanime.com" class="team_member_email">miyu@otakuanime.com</a>
         </div>
 
-        <div class="products_card">
-            <img src="img/poster1.jpg" alt="Anime Poster" class="products_img" />
-            <h3>Attack on Titan Poster</h3>
-            <p>High-quality poster for your anime room decoration.</p>
-            <button class="products_button">Add to Cart</button>
+        <div class="team_member">
+            <img src="img/staff3.jpg" alt="Customer Support" />
+            <h3 class="team_member_name">Hiroshi Yamamoto</h3>
+            <p class="team_member_description">Customer Support - Here to help you anytime.</p>
+            <a href="mailto:hiroshi@otakuanime.com" class="team_member_email">hiroshi@otakuanime.com</a>
         </div>
     </section>
 
     <section class="contacts" id="contact">
         <h2>Contact Us</h2>
-
-        <!-- Contact form -->
+        <p class="contacts_text_location">123 Anime Lane, Tokyo, Japan</p>
+        <p class="contacts_text_phone">Phone: <a href="tel:+810123456789" class="contacts_text_phone_link">+81 012-345-6789</a></p>
+        <p class="contacts_text_email">Email: <a href="mailto:support@otakuanime.com" class="contacts_text_email_link">support@otakuanime.com</a></p>
+  
+          <!-- Contact form -->
         <form class="contact_form" action="#" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -55,8 +58,6 @@
             <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
 
             <button type="submit" class="contact_button">Send</button>
-        </form>
     </section>
 </body>
 </html>
-
