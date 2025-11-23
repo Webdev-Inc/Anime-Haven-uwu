@@ -5,94 +5,106 @@
     box-sizing: border-box;
 }
 
-.attack_titan{
-    width: 40%;
+/* === GLOBAL / LAYOUT === */
+
+body {
+    background-color: #ffffff;
+    color: #4a148c;
+    line-height: 1.5;
 }
+
+/* allow keyboard focus outline for all interactive elements */
+a, button, input, textarea {
+    outline-color: #6a1b9a;
+    outline-offset: 2px;
+}
+
+/* NAVBAR */
+
 .menu {
+    display: flex;
     align-items: center;
-    text-align: center;
-    justify-content: right;
+    justify-content: center;
     height: 90px;
     background-color: #f7d1e3; /* light pink pastel */
-    padding-top: 0px;
+    padding-top: 0;
 }
-.cont{
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.title {
+    color: #6a1b9a;
+    font-size: 28px;
+    font-weight: bold;
+    border: 2px solid #6a1b9a;
+    border-radius: 8px;
+    padding: 4px 20px;
+    background-color: #ffffff;
+    display: inline-block;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
     flex-direction: row;
 }
-nav{
-    display:flex;
-}
+
 .menu .menu_item {
     list-style-type: none;
+    display: flex;
     flex-direction: row;
     padding: 20px;
 }
-.title{
-    color:#6a1b9a;
-    font-size: 28px;
-    font-weight: bold;
-    margin-right: 45%;
-    border: 2px solid #6a1b9a; /* add border around site title */
-    border-radius: 8px;
-    padding: 4px 20px; /* widen white background */
-    background-color: #ffffff; /* white background behind title */
-    display: inline-block; /* keep background tight to text */
 
+.lasta {
+    margin-right: 0;
 }
-.lasta{
-    margin-right: 5%;
-}
-.global{
+
+/* main nav links */
+.global {
     margin-left: 20px;
     text-align: center;
     text-decoration: none;
-    color: #6a1b9a; /* purple color */
-    font-size: 28px;
+    color: #6a1b9a;
+    font-size: 20px;
     font-weight: bold;
     padding: 6px 16px;
     border-radius: 6px;
-    background: transparent;
-    align-items: center;
     background-color: rgba(255, 255, 255, 0.4);
-    border-color: #ad1457;
+    border: 2px solid #ad1457;
+    display: inline-block;
 }
 
-.global:hover{
-    transition: 0.6s ease;
-}
-.menu .menu_item .global {
-    text-decoration: none;
-    color: #6a1b9a; /* purple color */
-    font-size: 28px;
-    font-weight: bold;
-    padding: 6px 16px;
-    border-radius: 6px;
-    background: transparent;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-color: #ad1457;
-}
-
-.menu .menu_item .global:hover {
-   background-color: rgba(255, 255, 255, 0.5);
-   border-color: black;
-    color: #ab47bc;
-    transition: 0.6s ease;
-}
-
+.global:hover,
 .menu .menu_item:hover {
-   background-color: rgba(255, 255, 255, 0.5);
-   border-color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: black;
     color: #ab47bc;
     transition: 0.6s ease;
 }
+
+/* show which page is current for accessibility */
+.global[aria-current="page"] {
+    background-color: #ce93d8;
+    color: #ffffff;
+    border-color: #6a1b9a;
+}
+
+/* HERO / MAIN HOME */
 
 .main {
     height: 600px;
     padding-top: 80px;
     text-align: center;
     background: url("img/anime_background.jpg") center center/cover no-repeat;
-    color: #d81b60; /* bright pink */
+    color: #d81b60;
 }
 
 .main_title {
@@ -114,7 +126,7 @@ nav{
     height: 60px;
     width: 180px;
     font-size: 24px;
-    background-color: #f48fb1; /* pastel pink */
+    background-color: #f48fb1;
     color: white;
     border: none;
     border-radius: 30px;
@@ -123,14 +135,16 @@ nav{
 }
 
 .main_button:hover {
-    background-color: #ce93d8; /* pastel purple */
+    background-color: #ce93d8;
     box-shadow: 0 6px 8px rgba(206, 147, 216, 0.8);
     transition: 0.3s ease;
 }
 
+/* ABOUT SECTION (home) */
+
 .about {
     padding: 50px 40px;
-    background-color: #fce4ec; /* very light pink */
+    background-color: #fce4ec;
     overflow: hidden;
 }
 
@@ -157,112 +171,117 @@ nav{
     text-align: justify;
 }
 
-.products, .team, .featured_grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
-  align-items: stretch; /* ensures children stretch to same height on a row */
+/* SHARED CARD / GRID STYLES */
+
+.products,
+.team,
+.featured_grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch;
 }
 
-.products > .products_title, .team > h2, .featured_section > .featured_title {
-  flex: 0 0 100%;
-  text-align: center;
-  margin-bottom: 12px;
+.products > .products_title,
+.team > h2,
+.featured_section > .featured_title {
+    flex: 0 0 100%;
+    text-align: center;
+    margin-bottom: 12px;
     background: transparent;
     align-items: center;
 }
 
+/* PRODUCTS PAGE LAYOUT */
+
 .products {
     padding: 60px 20px;
-    background-color: #ffffff; /* soft lavender */
-    /* Two-column layout: sidebar + grid */
+    background-color: #ffffff;
     display: grid;
     grid-template-columns: 320px 1fr;
-    gap: 40px; /* 40px gap between sidebar and products */
+    gap: 40px;
     align-items: start;
-    position: relative; /* enable vertical divider positioning */
+    position: relative;
 }
 
-/* Vertical divider between sidebar and product grid */
+/* vertical divider between sidebar and product grid */
 .products::before {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 320px; /* end of sidebar column */
-    transform: translateX(20px); /* half of 40px gap */
+    left: 320px;
+    transform: translateX(20px);
     width: 0;
-    border-left: 1px solid #e6dff0; /* subtle lavender divider */
+    border-left: 1px solid #e6dff0;
     pointer-events: none;
     z-index: 1;
 }
 
-/* Purple background behind the entire sidebar column (including above/below the box) */
+/* purple background for sidebar column */
 .products::after {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 360px; /* cover sidebar (320px) + 40px gap to eliminate white */
-    background-color: #f3e5f5; /* soft purple */
+    width: 360px;
+    background-color: #f3e5f5;
     z-index: 0;
 }
 
-/* Grid of product cards (4 per row, fixed width) */
+/* grid of product cards (4 per row, fixed width) */
 .products_grid {
     display: grid;
     grid-template-columns: repeat(4, 290px);
     gap: 60px;
-    justify-content: center; /* center fixed-width grid within available width */
+    justify-content: center;
     align-items: stretch;
     text-align: center;
 }
 
-/* Keep the section title spanning full width above the grid */
+/* section title spanning full width above grid */
 .products_grid > .products_title {
     grid-column: 1 / -1;
 }
 
-/* Enhance visibility of Featured Products title */
+/* Treat products title visually similar to team title */
 .products_grid > .products_title {
-    background-color: #fff5f7; /* light background for contrast */
-    border: 2px solid #e53935; /* red border to stand out */
+    background-color: #fff5f7;
+    border: 2px solid #e53935;
     border-radius: 12px;
     padding: 10px 14px;
-    color: #6a1b9a; /* readable text color */
-    display: block; /* span full grid width */
+    color: #6a1b9a;
+    display: block;
     width: 100%;
-    margin: 0; 
-    text-align: center; /* keep text centered */
+    margin: 0;
+    text-align: center;
 }
 
-/* Improve visibility of the products H2 title */
-/* (Reverted visual overrides for products title) */
-
-/* Apply same visual treatment to Meet the Team title */
+/* TEAM title treatment */
 .team > h2 {
-    background-color: #fff5f7; /* light background for contrast */
-    border: 2px solid #e53935; /* red border to stand out */
+    background-color: #fff5f7;
+    border: 2px solid #e53935;
     border-radius: 12px;
     padding: 10px 14px;
-    color: #6a1b9a; /* readable text color */
-    display: inline-block; /* keep background tight around text */
+    color: #6a1b9a;
+    display: inline-block;
 }
 
-/* Sidebar styles */
+/* PRODUCTS SIDEBAR */
+
 .products_filters {
     position: sticky;
-    top: 0; /* stick to top of products section */
-    align-self: stretch; /* span the full column height */
-    background: transparent; /* let column purple show through */
+    top: 0;
+    align-self: stretch;
+    background: transparent;
     border: 2px solid transparent;
     border-radius: 16px;
     padding: 16px;
     height: 100%;
     width: 100%;
-    z-index: 2; /* above divider/background */
+    z-index: 2;
 }
 
 .products_filters h3 {
@@ -273,33 +292,41 @@ nav{
 
 .products_search {
     width: 100%;
-    padding: 14px 16px; /* larger input */
+    padding: 14px 16px;
     border-radius: 12px;
     border: 2px solid #ce93d8;
     outline: none;
-    font-size: 18px; /* larger text */
+    font-size: 18px;
 }
+
 .products_search:focus {
     border-color: #6a1b9a;
-    box-shadow: 0 0 0 3px rgba(106,27,154,0.1);
+    box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.1);
 }
 
-.products_card, .team_member, .featured_card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  flex: 0 1 290px; /* base width; adjusts on smaller screens */
-  box-sizing: border-box;
-  padding: 16px;
+/* CARDS: products, team, featured */
+
+.products_card,
+.team_member,
+.featured_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 1 290px;
+    box-sizing: border-box;
+    padding: 16px;
 }
 
-.products_img, .featured_img, .team_member img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  flex: 0 0 auto;
+/* images inside cards */
+.products_img,
+.featured_img,
+.team_member img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex: 0 0 auto;
 }
 
 .products_title {
@@ -308,11 +335,10 @@ nav{
     margin-bottom: 50px;
 }
 
+/* product card appearance */
 .products_card {
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* fill 290px grid cell */
-    margin: 0; /* grid handles spacing via gap */
+    width: 100%;
+    margin: 0;
     vertical-align: top;
     border: 2px solid #fafafa;
     border-radius: 20px;
@@ -321,14 +347,13 @@ nav{
     padding-bottom: 15px;
 }
 
-/* Ensure all product images are uniform in size and aspect ratio */
+/* ensure uniform product image size */
 .products_img {
     width: 100%;
     height: 180px;
     display: block;
-    object-fit: cover; /* Uniform thumbnails to stabilize card height */
+    object-fit: cover;
 }
-
 
 .products_card h3 {
     color: #6a1b9a;
@@ -340,13 +365,13 @@ nav{
     color: #4a148c;
     padding: 0 10px;
     margin-bottom: 10px;
-    flex: 1; /* fill available space to push button down */
+    flex: 1;
 }
 
 .products_button {
     display: block;
     margin: 0 auto;
-    margin-top: auto; /* stick to bottom of the card */
+    margin-top: auto;
     align-self: center;
     padding: 10px 20px;
     border-radius: 30px;
@@ -362,6 +387,8 @@ nav{
     background-color: #6a1b9a;
     color: white;
 }
+
+/* TEAM SECTION (teamcontact page) */
 
 .team {
     background-color: #fce4ec;
@@ -425,6 +452,8 @@ nav{
     transition: 0.3s ease;
 }
 
+/* CONTACT SECTION */
+
 .contacts {
     padding: 50px 40px;
     background-color: #f3e5f5;
@@ -459,6 +488,7 @@ nav{
 }
 
 /* Contact form styles */
+
 .contact_form {
     max-width: 600px;
     margin: 0 auto;
@@ -512,33 +542,35 @@ nav{
     transition: background-color 0.3s ease;
 }
 
-/* Style for one specific ad image */
-#ad-img {
-  display: block;                 /* Needed for margin centering */
-  margin: 20px auto;              /* Centers horizontally */
-  width: 300px;                   /* Adjust as needed */
-  border-radius: 15px;            /* Soft rounded corners */
-  border: 3px solid #ffb6c1;      /* Light pink border */
-  box-shadow: 0 0 15px #ffc0cb;   /* Soft pink glow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  filter: brightness(1.05) saturate(1.2); /* Slight pop */
-}
-
-/* Optional container centering + responsive max */
-.ad-wrapper {
-  text-align: center;             /* Fallback centering context */
-}
-
-/* Hover effect */
-#ad-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #ff99cc;
-}
-
 .contact_button:hover {
     background-color: #6a1b9a;
     color: white;
 }
+
+/* AD IMAGE */
+
+#ad-img {
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 15px;
+    border: 3px solid #ffb6c1;
+    box-shadow: 0 0 15px #ffc0cb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: brightness(1.05) saturate(1.2);
+}
+
+.ad-wrapper {
+    text-align: center;
+}
+
+#ad-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff99cc;
+}
+
+/* FEATURED SECTION (home or products) */
+
 .featured_section {
     background-color: #fce4ec;
     padding: 40px 20px;
@@ -574,7 +606,7 @@ nav{
     border-radius: 15px;
     margin-bottom: 15px;
     object-fit: cover;
-    height: 200px; /* uniform height */
+    height: 200px;
 }
 
 .featured_card h3 {
@@ -588,38 +620,100 @@ nav{
     color: #880e4f;
 }
 
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-    .about_img {
-        width: 80%;
-        float: none;
-        display: block;
-        margin: 15px auto;
-    }
-    .products_card {
-        width: 80%;
-        margin: 20px auto;
-    }
-    .team_member {
-        width: 80%;
-        margin: 20px auto;
-    }
-    .main_title {
-        font-size: 50px;
-    }
-    .main_subtitle {
-        font-size: 24px;
-    }
+/* === BLOG PAGE STYLES (new) === */
+
+.blog {
+    padding: 60px 20px 40px 20px;
+    background-color: #fce4ec;
 }
 
+.blog_intro {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
 
-/* === UNIFORM IMAGE CROPPING: make product/featured/team images same width & height ===
-   - All product/featured images -> 220x220px cropped (object-fit: cover)
-   - Team member images -> 220x220px cropped and shown as circle
-   - Attack_titan or other image-specific classes overridden to maintain uniform size
-   - Uses !important to ensure these rules take precedence without changing existing layout.
+.blog_title {
+    font-size: 38px;
+    color: #ad1457;
+    margin-bottom: 12px;
+}
+
+.blog_subtitle {
+    font-size: 18px;
+    color: #6a1b9a;
+}
+
+.blog_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog_post {
+    background-color: #fff0f6;
+    border-radius: 20px;
+    border: 2px solid #ad1457;
+    padding: 18px;
+    box-shadow: 0 3px 6px rgba(173, 20, 87, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.blog_img {
+    width: 100%;
+    height: 210px;
+    border-radius: 16px;
+    object-fit: cover;
+    margin-bottom: 14px;
+}
+
+.blog_post_title {
+    font-size: 22px;
+    color: #6a1b9a;
+    margin-bottom: 6px;
+}
+
+.blog_post_meta {
+    font-size: 14px;
+    color: #880e4f;
+    margin-bottom: 10px;
+}
+
+.blog_post_excerpt {
+    font-size: 16px;
+    color: #4a148c;
+    margin-bottom: 12px;
+    flex: 1;
+}
+
+.blog_read_more {
+    align-self: flex-start;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: #ce93d8;
+    color: #4a148c;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.blog_read_more:hover {
+    background-color: #6a1b9a;
+    color: #ffffff;
+}
+
+/* === UNIFORM IMAGE CROPPING ===
+   Make product/featured/team images same width & height
 */
-.products_img, .featured_img, .products_card img, .featured_card img {
+
+.products_img,
+.featured_img,
+.products_card img,
+.featured_card img {
     width: 220px !important;
     height: 220px !important;
     object-fit: cover !important;
@@ -629,7 +723,8 @@ nav{
     flex: 0 0 auto;
 }
 
-.team_member img, .team_member .team_img {
+.team_member img,
+.team_member .team_img {
     width: 220px !important;
     height: 220px !important;
     object-fit: cover !important;
@@ -640,16 +735,171 @@ nav{
 }
 
 /* Ensure any special classes (like attack_titan) don't override the uniform sizing */
-.attack_titan.products_img, .attack_titan.featured_img {
+
+.attack_titan.products_img,
+.attack_titan.featured_img {
     width: 220px !important;
     height: 220px !important;
     object-fit: cover !important;
 }
 
-/* Responsive: scale down on small screens but keep square crop */
+/* === RESPONSIVE & ACCESSIBILITY IMPROVEMENTS === */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+    .main {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .main_title {
+        font-size: 60px;
+    }
+
+    .main_subtitle {
+        font-size: 28px;
+    }
+
+    .products {
+        grid-template-columns: 260px 1fr;
+    }
+
+    .products::before {
+        left: 260px;
+        transform: translateX(20px);
+    }
+
+    .products::after {
+        width: 300px;
+    }
+
+    .products_grid {
+        grid-template-columns: repeat(2, 260px);
+        gap: 30px;
+    }
+
+    .blog_grid {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+
+    /* stack nav vertically */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .menu {
+        height: auto;
+        padding: 10px 16px;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+
+    .menu .menu_item {
+        padding: 8px 4px;
+    }
+
+    .global {
+        font-size: 16px;
+        padding: 6px 10px;
+        margin-left: 8px;
+    }
+
+    .title {
+        margin-bottom: 6px;
+        font-size: 22px;
+    }
+
+    .about_img {
+        width: 80%;
+        float: none;
+        display: block;
+        margin: 15px auto;
+    }
+
+    .about {
+        padding: 30px 20px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .products::before,
+    .products::after {
+        display: none;
+    }
+
+    .products_filters {
+        position: static;
+        background-color: #f3e5f5;
+        border-color: #ce93d8;
+    }
+
+    .products_grid {
+        grid-template-columns: minmax(260px, 1fr);
+        gap: 25px;
+    }
+
+    .products_card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .team_member {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .main_title {
+        font-size: 50px;
+    }
+
+    .main_subtitle {
+        font-size: 24px;
+    }
+
+    .blog {
+        padding: 40px 16px;
+    }
+
+    .blog_grid {
+        grid-template-columns: minmax(260px, 1fr);
+    }
+}
+
+/* Extra small screens */
 @media (max-width: 480px) {
-    .products_img, .featured_img, .team_member img {
+    .products_img,
+    .featured_img,
+    .team_member img {
         width: 140px !important;
         height: 140px !important;
+    }
+
+    .main_title {
+        font-size: 36px;
+    }
+
+    .main_subtitle {
+        font-size: 20px;
+    }
+
+    .about_text {
+        font-size: 18px;
+    }
+
+    .blog_img {
+        height: 180px;
     }
 }
