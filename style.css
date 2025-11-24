@@ -81,14 +81,15 @@ nav {
     background-color: rgba(255, 255, 255, 0.4);
     border: 2px solid #ad1457;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 
-.global:hover,
-.menu .menu_item:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-color: black;
-    color: #ab47bc;
-    transition: 0.6s ease;
+.global:hover {
+    background-color: #ce93d8;
+    border-color: #6a1b9a;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* show which page is current for accessibility */
@@ -346,6 +347,12 @@ nav {
     background-color: #faf4fc;
     box-shadow: 2px 2px 8px rgba(106, 27, 154, 0.3);
     padding-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products_card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(106, 27, 154, 0.4);
 }
 
 /* ensure uniform product image size */
@@ -600,6 +607,12 @@ nav {
     width: 230px;
     box-shadow: 0 3px 6px rgba(173, 20, 87, 0.3);
     padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured_card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(173, 20, 87, 0.5);
 }
 
 .featured_img {
