@@ -1,3 +1,4 @@
+/* === All content from style.css is pasted here === */
 * {
     font-family: 'Roboto Mono', monospace;
     margin: 0;
@@ -902,4 +903,66 @@ nav {
     .blog_img {
         height: 180px;
     }
+}
+
+/* FIX: Added styles to correct the sidebar/grid overlap.
+  This block is placed *after* the main styles to override them.
+  It uses flexbox and overrides the conflicting 'position' and 'width' properties.
+*/
+
+/* Use flexbox on the main products container */
+.products {
+    display: flex;
+    flex-wrap: wrap; /* Allows stacking on small screens */
+    padding: 20px; 
+    gap: 20px; /* Creates space between sidebar and grid */
+    
+    /* Remove grid-specific styles */
+    grid-template-columns: none; 
+    
+    /* Remove pseudo-elements that depended on grid layout */
+    position: static;
+}
+
+.products::before,
+.products::after {
+    display: none;
+}
+
+/* Define the sidebar's size and fix its layout */
+.products_filters {
+    flex-basis: 240px; /* Set a specific width for the sidebar */
+    flex-shrink: 0; /* Prevent the sidebar from shrinking */
+    
+    /* This is the key fix: 
+       Override 'position: sticky' which caused the overlap. */
+    position: static; 
+    
+    /* Ensures sidebar doesn't extend unnecessarily */
+    height: fit-content; 
+    
+    /* Override the problematic width: 100% from style.css */
+    width: auto; 
+    
+    /* Add back a background since the ::after is gone */
+    background-color: #f3e5f5;
+    border: 2px solid #ce93d8;
+}
+
+/* Ensure the product grid takes up the remaining space */
+.products_grid {
+    flex: 1; /* Allows the grid to grow and fill available space */
+    /* Set a min-width to prevent it from getting too squished */
+    min-width: 300px;
+    
+    /* Override grid-specific styles from main CSS */
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: none;
+}
+
+/* Make title display correctly in new flex layout */
+.products_grid > .products_title {
+    grid-column: auto; /* Reset grid-item property */
+    flex-basis: 100%; /* Make title span full width */
 }
