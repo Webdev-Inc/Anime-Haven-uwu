@@ -518,7 +518,8 @@ nav {
 
 .contact_form input[type="text"],
 .contact_form input[type="email"],
-.contact_form textarea {
+.contact_form textarea,
+.contact_form select {
     width: 100%;
     padding: 10px 12px;
     margin-bottom: 18px;
@@ -531,7 +532,8 @@ nav {
 
 .contact_form input[type="text"]:focus,
 .contact_form input[type="email"]:focus,
-.contact_form textarea:focus {
+.contact_form textarea:focus,
+.contact_form select:focus {
     border-color: #6a1b9a;
     outline: none;
 }
